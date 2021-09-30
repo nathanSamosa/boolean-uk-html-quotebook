@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.5rem;
+}
+
+header {
+    height: 55px;
+    background-color:#F4F1EA;
+    box-shadow: 0px 3px 5px #888888;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    padding-top: 50px;
+    padding-left: auto;
+    padding-right: auto;
+    display: grid;
+    grid-template-areas: ". quotescolumn aside";
+    grid-template-columns: 1fr minmax(20rem, 50rem) 1fr;
+}
+
+
+
+.box {
+    border: solid 3px gray;
+    display: grid;
+    grid-template:
+        "info quotescontainer" auto /
+        1fr 2fr;
+}
+
+.info {
+    background-color:#F4F1EA;
+    box-shadow: 3px 0px 4px #888888;
+    
+    display: grid;
+    grid-template:
+        "name" auto
+        "age" auto
+        "image" 150px
+        "descr" 1fr;
+}
+
+.quote {
+    display: grid;
+    grid-template:
+        "quotetext" 1fr
+        "quotedate" 20px;
+}
+
+.aside {
+    display: grid;
+    grid-area: aside;
+    margin: 20px;
+}
+
+
+.quotescolumn {
+    grid-area: quotescolumn;
+}
+.box {
+    margin-bottom: 20px;
+    box-shadow: 5px 8px 10px #888888;
+}
+.info {
+    grid-area: info;
+}
+.quotescontainer {
+    grid-area: quotescontainer;
+}
+
+.quotescontainer > div {
+    padding: 10px;
+}
+
+.name {
+    grid-area: name;
+    display: grid;
+    
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 0;
+
+    font-weight: bold;
+}
+.age {
+    grid-area: age;
+    display: grid;
+    
+    text-align: center;
+    padding: 10px;
+    padding-top: 0;
+
+    font-weight: normal;
+    font-style: italic;
+}
+.image {
+    grid-area: image;
+    display: grid;
+    place-items: center;
+}
+.descr {
+    display: grid;
+    text-align: center;
+    grid-area: descr;
+    color: gray;
+    font-style: italic;
+    padding: 10px;
+}
+
+.headshot {
+    width: 150px;
+    border: solid 3px black;
+    border-radius: 50%;
+}
+
+.quotedate {
+    grid-area: quotedate;
+    display: grid;
+    place-items: center;
+    justify-content: right;
+
+    color: gray;
+    font-style: italic;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.quotetext {
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+hr {
+    margin: 10px;
+}
+
+.internallinks {
+    border: solid 2px gray;;
+    padding: 10px;
+    height: fit-content;
+    width:15rem;
+}
+
+.quotescontainer > article:nth-of-type(odd) {
+    color: rgb(255, 151, 151);
+  }
+.quotescontainer > article:nth-of-type(even) {
+    color: rgb(151, 151, 255);
+  }
+
+@media screen and (max-width: 1060px) {
+    .main {
+      grid-template:
+        ". quotescolumn" 1fr /
+        1fr minmax(20rem, 50rem);
+    }
+  
+    .internallinks {
+      display: none;
+    }
+    .aside {
+        display: none;
+        margin: 0;
+    }
+}
